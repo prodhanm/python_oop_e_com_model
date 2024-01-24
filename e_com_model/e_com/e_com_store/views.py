@@ -8,3 +8,7 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
     #return HttpResponse("<h1>About page</h1>")
+
+def product(request):
+    return render(request, 'product.html')
+
