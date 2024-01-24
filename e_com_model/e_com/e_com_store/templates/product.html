@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Product Page
+{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="row mt-5">
+            <div class="col-10 mx-auto col-md-6 my-3">
+                <img class="product_img" src="{% static 'img/FF7.png' %}" 
+                    alt="Final Fantasy 7">
+            </div>
+            <div class="col-10 mx-auto col-md-6 my-3">
+                <div>
+                    <h1 class="product_title">
+                        Final Fantasy 7
+                    </h1>
+                    <p>
+                        <h5 class="text-info font-talic mb-3">
+                            <span class="mr-1">$ </span>50
+                        </h5>
+                    </p>
+                    <p class="product_description">
+                        Product Description
+                    </p>
+                    <p class="text-justify product_text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Hic quod enim est molestiae debitis repellat esse perferendis 
+                        nulla, qui quasi vel impedit architecto odit id, dolore soluta 
+                        quaerat. Ab, eum.
+                    </p>
+                    <p class="text-justify product_text">
+                        <b>Out of Stock</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
