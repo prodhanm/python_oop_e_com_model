@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<!--The code for the hero image on the home page-->
     <div class="container-fluid">
         <div class="row">
             <img style="width: 100%" src="{% static 'hero/hero_1.jpg' %}" alt="Hero Image Here">
@@ -23,23 +24,24 @@
         </div>    
     </div>
 
+<!--The code for the products on the home page-->
     <div class="container">
         <div class="row">
-            {% for i in '123456789' %}
+            {% for product in products %}
                 <div class="col-9 mx-auto col-md-6 col-lg-3">
                     <div class="card mb-4" style="border: transparent;">
                         <div class="p-4">
-                            <img src="{% static 'img/COD_MW_3_XBox_1.jpg' %}" 
+                            <img src="{{ product.image.url }}" 
                             class="card-img-top"
-                            alt="Call of Duty">
+                            alt={{product.name}}>
                         </div>
                         <div class="card-footer d-flex-justify-content-between"
                             style="background: transparent; border-color: transparent;">
                             <p class="font-weight-bold mb-0">
-                                Some Product
+                                {{ product.name }}
                             </p>
                             <h5 class="text-info font-talic mb-0">
-                                <span class="mr-1">$ </span>30.00 
+                                <span class="mr-1">$ </span>{{ product.price}} 
                             </h5>
                         </div>
                     </div>
