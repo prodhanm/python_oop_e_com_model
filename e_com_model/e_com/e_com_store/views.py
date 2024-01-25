@@ -20,6 +20,13 @@ def about(request):
     return render(request, 'about.html')
     #return HttpResponse("<h1>About page</h1>")
 
-def product(request):
-    return render(request, 'product.html')
+def product(request, category_slug, product_slug):
+    try:
+        product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+        # category__slug denotes in django, category.slug to access the slug field.
+        # category__slug=category_slug, slug=product_slug denotes that we are looking
+        # to access the category_slug (having the single underscore).
+    except Exception as e:
+        raise e
+    return render(request, 'product.html', {'product': product})
 

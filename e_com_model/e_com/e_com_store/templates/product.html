@@ -9,31 +9,32 @@
     <div class="container py-5">
         <div class="row mt-5">
             <div class="col-10 mx-auto col-md-6 my-3">
-                <img class="product_img" src="{% static 'img/FF7.png' %}" 
-                    alt="Final Fantasy 7">
+                <img class="product_img" src="{{ product.image.url }}" 
+                    alt="{{product.name}}">
             </div>
             <div class="col-10 mx-auto col-md-6 my-3">
                 <div>
                     <h1 class="product_title">
-                        Final Fantasy 7
+                        {{ product.name }}
                     </h1>
                     <p>
                         <h5 class="text-info font-talic mb-3">
-                            <span class="mr-1">$ </span>50
+                            <span class="mr-1">$ </span> {{ product.price }}
                         </h5>
                     </p>
                     <p class="product_description">
                         Product Description
                     </p>
                     <p class="text-justify product_text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Hic quod enim est molestiae debitis repellat esse perferendis 
-                        nulla, qui quasi vel impedit architecto odit id, dolore soluta 
-                        quaerat. Ab, eum.
+                        {{ product.description }}
                     </p>
-                    <p class="text-justify product_text">
-                        <b>Out of Stock</b>
-                    </p>
+                    {% if product.stock <= 0 %}
+                        <p class="text-justify product_text">
+                            <b>Out of Stock</b>
+                        </p>
+                    {% else %}
+                        <a href="">Add to Cart</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
